@@ -1,91 +1,327 @@
-<html>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-            justify-self: center;
-            display: flex;
-
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>windows专区（exe）</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36D399',
+                        accent: '#8B5CF6',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                },
+            }
         }
-
-        .card:hover {
-            transform: scale(1.03);
-        }
-        .back {
-            text-align: center;
-            font-size: 40px;
-            text-decoration: none;
-            color: black;
-            justify-self: center;
-        }
-
-        .lj {
-            text-align: center;
-            color: black;
-            text-decoration: none;
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-transition {
+                transition: all 0.3s ease;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            }
         }
     </style>
-    <title>windows专区（exe）</title>
-    <body>
-        <div class="card">
-        <center><a href="index.html" class="back">返回</a></center>
-    </div>
-    <h1 style="text-align: center;font-size: 40px;">windows exe 注入器下载专区</h1>
-    <div class="card">
-        <img src="delta.png" style="width: 200px;height: 200px;">
-        <div>
-            <h2>忍者(delta)</h2>
-            <a href="https://deltaexectr.com/windows" class="lj">点击此处下载文件(直连网站下载速度较慢)</a>
-            <br>
-            <br>
-            <a href="https://deltaexectr.com/" class="lj">点击此处跳转页面</a>
+</head>
+<body class="bg-gray-50 font-sans text-dark">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                <i class="fa fa-gamepad mr-2"></i>
+                <span>游戏注入器中心</span>
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-primary transition-colors duration-200">首页</a>
+                <a href="pg2.html" class="text-gray-700 hover:text-primary transition-colors duration-200">苹果专区</a>
+                <a href="pg3.html" class="text-gray-700 hover:text-primary transition-colors duration-200">安卓专区</a>
+                <a href="pg4.html" class="text-primary font-medium">Windows专区</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition-colors duration-200">帮助</a>
+            </div>
+            <button class="md:hidden text-gray-700 focus:outline-none" id="menu-toggle">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
         </div>
-    </div>
-    <br>
-    <div class="card">
-        <img src="solara.png" style="width: 300px;height: 180px;">
-        <div>
-            <h2>solara</h2>
-            <a href="https://solaraexecutor.com/" class="lj">点击此处跳转页面(直连网站打开速度较慢)</a>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white shadow-lg absolute w-full" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="index.html" class="text-gray-700 hover:text-primary py-2 transition-colors duration-200">首页</a>
+                <a href="pg2.html" class="text-gray-700 hover:text-primary py-2 transition-colors duration-200">苹果专区</a>
+                <a href="pg3.html" class="text-gray-700 hover:text-primary py-2 transition-colors duration-200">安卓专区</a>
+                <a href="pg4.html" class="text-primary font-medium py-2">Windows专区</a>
+                <a href="#" class="text-gray-700 hover:text-primary py-2 transition-colors duration-200">帮助</a>
+            </div>
         </div>
-    </div>
-    <br>
-    <div class="card">
-        <img src="wave.png" style="width: 180px;height: 180px;">
-        <div>
-            <h2>wave</h2>
-            <a href="https://www.123865.com/s/raurjv-9ylrA" class="lj">点击即可下载文件（123网盘速度起飞）</a>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 pt-24 pb-16">
+        <div class="text-center mb-12">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark mb-4 text-shadow">
+                Windows exe 注入器下载专区
+            </h1>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                为您的Windows设备提供高性能游戏注入器，支持多种游戏和功能，让游戏体验更加丰富
+            </p>
         </div>
-    </div>
-    <div class="card">
-        <img src="swift.png" style="width: 180px;height: 180px;">
-        <div>
-            <h2>swift</h2>
-            <a href="https://www.123865.com/s/raurjv-TjlrA" class="lj">点击即可下载文件（123网盘速度起飞）</a>
+
+        <!-- 卡片容器 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- 忍者卡片 -->
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center p-6">
+                        <img src="delta.png" alt="忍者注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
+                            <i class="fa fa-bolt text-accent mr-2"></i>
+                            忍者(Delta)
+                        </h2>
+                        <p class="text-gray-600 mb-4">专为Windows设备设计的高性能游戏注入器，提供流畅的游戏体验和强大的注入功能。</p>
+                        <div class="flex flex-col space-y-3">
+                            <a href="https://deltaexectr.com/windows" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                                <i class="fa fa-download mr-2"></i>
+                                下载文件
+                                <span class="ml-2 text-sm text-white/80">(直连网站下载速度较慢)</span>
+                            </a>
+                            <a href="https://deltaexectr.com/" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                                <i class="fa fa-external-link mr-2"></i>
+                                跳转官方页面
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- solara卡片 -->
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center p-6">
+                        <img src="solara.png" alt="solara注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
+                            <i class="fa fa-sun-o text-yellow-500 mr-2"></i>
+                            solara
+                        </h2>
+                        <p class="text-gray-600 mb-4">一款功能丰富的Windows游戏注入器，支持多种游戏和多种注入方式，操作简单。</p>
+                        <div class="flex flex-col space-y-3">
+                            <a href="https://solaraexecutor.com/" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                                <i class="fa fa-external-link mr-2"></i>
+                                跳转官方页面
+                                <span class="ml-2 text-sm text-white/80">(直连网站打开速度较慢)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- wave卡片 -->
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center p-6">
+                        <img src="wave.png" alt="wave注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
+                            <i class="fa fa-wave-square text-blue-500 mr-2"></i>
+                            wave
+                        </h2>
+                        <p class="text-gray-600 mb-4">轻量级Windows游戏注入器，专注于提供稳定的游戏注入体验，占用资源少。</p>
+                        <div class="flex flex-col space-y-3">
+                            <a href="https://www.123865.com/s/raurjv-9ylrA" class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                                <i class="fa fa-download mr-2"></i>
+                                下载文件
+                                <span class="ml-2 text-sm text-white/80">(123网盘速度起飞)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- swift卡片 -->
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3 bg-gradient-to-br from-green-400 to-teal-600 flex items-center justify-center p-6">
+                        <img src="swift.png" alt="swift注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
+                            <i class="fa fa-bolt text-green-500 mr-2"></i>
+                            swift
+                        </h2>
+                        <p class="text-gray-600 mb-4">一款快速高效的Windows游戏注入器，专为追求极致性能的玩家设计。</p>
+                        <div class="flex flex-col space-y-3">
+                            <a href="https://www.123865.com/s/raurjv-TjlrA" class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                                <i class="fa fa-download mr-2"></i>
+                                下载文件
+                                <span class="ml-2 text-sm text-white/80">(123网盘速度起飞)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- xeno卡片 -->
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center p-6">
+                        <img src="xeno.png" alt="xeno注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
+                            <i class="fa fa-robot text-indigo-500 mr-2"></i>
+                            xeno
+                        </h2>
+                        <p class="text-gray-600 mb-4">功能全面的Windows游戏注入器，支持多种游戏和多种脚本，满足不同玩家需求。</p>
+                        <div class="flex flex-col space-y-3">
+                            <a href="https://www.123865.com/s/raurjv-xd7rA" class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                                <i class="fa fa-download mr-2"></i>
+                                下载文件
+                                <span class="ml-2 text-sm text-white/80">(123网盘速度起飞)</span>
+                            </a>
+                            <a href="https://scriptpaste.org/xeno-executor/" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                                <i class="fa fa-external-link mr-2"></i>
+                                跳转官方页面
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ronix卡片 -->
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3 bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center p-6">
+                        <img src="ronix.png" alt="ronix注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
+                            <i class="fa fa-gamepad text-red-500 mr-2"></i>
+                            ronix
+                        </h2>
+                        <p class="text-gray-600 mb-4">一款专为Windows设计的游戏注入器，提供多种游戏修改选项和友好的用户界面。</p>
+                        <div class="flex flex-col space-y-3">
+                            <a href="https://www.123865.com/s/raurjv-fd7rA" class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                                <i class="fa fa-download mr-2"></i>
+                                下载文件
+                                <span class="ml-2 text-sm text-white/80">(123网盘速度起飞)</span>
+                            </a>
+                            <a href="https://ronixexecutor.net/" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                                <i class="fa fa-external-link mr-2"></i>
+                                跳转官方页面
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <img src="xeno.png" style="width: 250px;height: 150px;">
-        <div>
-            <h2>xeno</h2>
-            <a href="https://www.123865.com/s/raurjv-xd7rA" class="lj">点击即可下载文件（123网盘速度起飞）</a>
-            <br>
-            <br>
-            <a href="https://scriptpaste.org/xeno-executor/" class="lj">点击此处跳转页面</a>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">游戏注入器中心</h3>
+                    <p class="text-gray-400">提供跨平台的游戏注入器下载服务，让您的游戏体验更加丰富多样。</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-200">首页</a></li>
+                        <li><a href="pg2.html" class="text-gray-400 hover:text-white transition-colors duration-200">苹果专区</a></li>
+                        <li><a href="pg3.html" class="text-gray-400 hover:text-white transition-colors duration-200">安卓专区</a></li>
+                        <li><a href="pg4.html" class="text-gray-400 hover:text-white transition-colors duration-200">Windows专区</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">支持</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">常见问题</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">安装指南</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">联系我们</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">关注我们</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fa fa-facebook-square text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fa fa-twitter-square text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fa fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fa fa-discord text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 游戏注入器中心. 保留所有权利.</p>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <img src="ronix.png" style="width: 180px;height: 180px;">
-        <div>
-            <h2>ronix</h2>
-            <a href="https://www.123865.com/s/raurjv-fd7rA" class="lj">点击即可下载文件（123网盘速度起飞）</a>
-            <br>
-            <br>
-            <a href="https://ronixexecutor.net/" class="lj">点击此处跳转页面</a>
-        </div>
-    </div>
-    </body>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('py-2', 'shadow-lg');
+                navbar.classList.remove('py-3', 'shadow-md');
+            } else {
+                navbar.classList.add('py-3', 'shadow-md');
+                navbar.classList.remove('py-2', 'shadow-lg');
+            }
+        });
+
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 添加平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>

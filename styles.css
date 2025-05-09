@@ -1,7 +1,8 @@
 /* 整体页面样式 */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #e6f0ff, white); /* 线性渐变 */
+    background-color: #a1d4ff;
+    filter: blur(2px) hue-rotate(10deg);
     display: flex;
     flex-direction: column;
     align-items: center;
