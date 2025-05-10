@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>apple专区（ipa）</title>
+    <title>游戏注入器 - 苹果专区</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     
@@ -20,11 +20,11 @@
                         light: '#F8FAFC'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
                     },
                     boxShadow: {
                         'card': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
                     }
                 },
             }
@@ -45,10 +45,13 @@
             .gradient-bg {
                 background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             }
+            .badge {
+                @apply text-xs font-semibold px-2.5 py-0.5 rounded-full;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans text-dark">
+<body class="bg-gray-50 font-inter text-dark">
     <!-- 导航栏 -->
     <nav class="bg-white shadow-md fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -56,6 +59,8 @@
                 <i class="fa fa-gamepad mr-2"></i>
                 <span>游戏注入器中心</span>
             </a>
+            
+            <!-- 桌面导航 -->
             <div class="hidden md:flex space-x-6">
                 <a href="index.html" class="text-gray-700 hover:text-primary transition-colors duration-200">首页</a>
                 <a href="pg2.html" class="text-primary font-medium">苹果专区</a>
@@ -63,10 +68,13 @@
                 <a href="pg4.html" class="text-gray-700 hover:text-primary transition-colors duration-200">Windows专区</a>
                 <a href="#" class="text-gray-700 hover:text-primary transition-colors duration-200">帮助</a>
             </div>
+            
+            <!-- 移动端菜单按钮 -->
             <button class="md:hidden text-gray-700 focus:outline-none" id="menu-toggle">
                 <i class="fa fa-bars text-xl"></i>
             </button>
         </div>
+        
         <!-- 移动端菜单 -->
         <div class="md:hidden hidden bg-white shadow-lg absolute w-full" id="mobile-menu">
             <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
@@ -89,94 +97,178 @@
                 为您的iOS设备提供高质量的游戏注入器，支持多种游戏和功能，让游戏体验更加丰富
             </p>
         </div>
-
-        <!-- 卡片容器 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        
+        <!-- 分类标签 -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+            <button class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium">全部</button>
+        </div>
+        
+        <!-- 注入器卡片网格 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <!-- 阿尔宙斯卡片 -->
             <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
-                <div class="flex flex-col md:flex-row">
-                    <div class="md:w-1/3 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center p-6">
-                        <img src="arceus.png" alt="阿尔宙斯注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+                <div class="relative">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center p-6">
+                        <img src="arceus.png" alt="阿尔宙斯注入器" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="md:w-2/3 p-6">
-                        <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
-                            <i class="fa fa-rocket text-primary mr-2"></i>
-                            阿尔宙斯(Arceus)
-                        </h2>
-                        <p class="text-gray-600 mb-4">一款功能强大的iOS游戏注入器，支持多种热门游戏，提供丰富的游戏辅助功能。</p>
-                        <div class="flex flex-col space-y-3">
-                            <a href="https://arceusx.com/arceusx.ipa" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
-                                <i class="fa fa-download mr-2"></i>
-                                下载文件
-                                <span class="ml-2 text-sm text-white/80">(直连网站下载速度较慢)</span>
-                            </a>
-                            <a href="https://arceusx.com" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
-                                <i class="fa fa-external-link mr-2"></i>
-                                跳转官方页面
-                            </a>
+                    <div class="absolute top-4 right-4">
+                        <span class="badge bg-yellow-400 text-yellow-900">热门</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-bold text-dark mb-2 flex items-center">
+                        <i class="fa fa-rocket text-primary mr-2"></i>
+                        阿尔宙斯(Arceus)
+                    </h2>
+                    <div class="flex items-center mb-3">
+                        <div class="flex text-yellow-400">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
                         </div>
+                        <span class="text-gray-500 text-sm ml-2">4.8 (120评价)</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">一款功能强大的iOS游戏注入器，支持多种热门游戏，提供丰富的游戏辅助功能。</p>
+                    <div class="flex flex-col space-y-3">
+                        <a href="https://arceusx.com/arceusx.ipa" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                            <i class="fa fa-download mr-2"></i>
+                            下载文件
+                            <span class="ml-2 text-sm text-white/80">(直连网站下载速度较慢)</span>
+                        </a>
+                        <a href="https://arceusx.com" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                            <i class="fa fa-external-link mr-2"></i>
+                            跳转官方页面
+                        </a>
                     </div>
                 </div>
             </div>
-
+            
             <!-- 忍者卡片 -->
             <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
-                <div class="flex flex-col md:flex-row">
-                    <div class="md:w-1/3 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center p-6">
-                        <img src="delta.png" alt="忍者注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+                <div class="relative">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center p-6">
+                        <img src="delta.png" alt="忍者注入器" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="md:w-2/3 p-6">
-                        <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
-                            <i class="fa fa-bolt text-accent mr-2"></i>
-                            忍者(Delta)
-                        </h2>
-                        <p class="text-gray-600 mb-4">专为iOS设备设计的高性能游戏注入器，提供流畅的游戏体验和强大的注入功能。</p>
-                        <div class="flex flex-col space-y-3">
-                            <a href="https://deltaexectr.com/ipa" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
-                                <i class="fa fa-download mr-2"></i>
-                                下载文件
-                                <span class="ml-2 text-sm text-white/80">(直连网站下载速度较慢)</span>
-                            </a>
-                            <a href="https://deltaexectr.com/ios/" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
-                                <i class="fa fa-external-link mr-2"></i>
-                                跳转官方页面
-                            </a>
+                    <div class="absolute top-4 right-4">
+                        <span class="badge bg-green-400 text-green-900">新发布</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-bold text-dark mb-2 flex items-center">
+                        <i class="fa fa-bolt text-accent mr-2"></i>
+                        忍者(Delta)
+                    </h2>
+                    <div class="flex items-center mb-3">
+                        <div class="flex text-yellow-400">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
                         </div>
+                        <span class="text-gray-500 text-sm ml-2">4.2 (85评价)</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">专为iOS设备设计的高性能游戏注入器，提供流畅的游戏体验和强大的注入功能。</p>
+                    <div class="flex flex-col space-y-3">
+                        <a href="https://deltaexectr.com/ipa" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                            <i class="fa fa-download mr-2"></i>
+                            下载文件
+                            <span class="ml-2 text-sm text-white/80">(直连网站下载速度较慢)</span>
+                        </a>
+                        <a href="https://deltaexectr.com/ios/" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                            <i class="fa fa-external-link mr-2"></i>
+                            跳转官方页面
+                        </a>
                     </div>
                 </div>
             </div>
+            
+            <!-- Codex卡片 -->
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
+                <div class="relative">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center p-6">
+                        <img src="codex.png" alt="Codex注入器" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-bold text-dark mb-2 flex items-center">
+                        <i class="fa fa-code text-green-600 mr-2"></i>
+                        Codex
+                    </h2>
+                    <div class="flex items-center mb-3">
+                        <div class="flex text-yellow-400">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm ml-2">5.0 (42评价)</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">专为iOS设备设计的高性能游戏注入器，提供流畅的游戏体验和强大的注入功能。</p>
+                    <div class="flex flex-col space-y-3">
+                        <a href="https://www.123865.com/s/raurjv-Fh7rA" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                            <i class="fa fa-download mr-2"></i>
+                            下载文件
+                            <span class="ml-2 text-sm text-white/80">(123网盘速度起飞)</span>
+                        </a>
+                        <a href="https://codex.lol/ios" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                            <i class="fa fa-external-link mr-2"></i>
+                            跳转官方页面
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AppleWare卡片 -->
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
+                <div class="relative">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center p-6">
+                        <img src="ware.png" alt="AppleWare注入器" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-xl font-bold text-dark mb-2 flex items-center">
+                        <i class="fa fa-apple text-red-600 mr-2"></i>
+                        AppleWare
+                    </h2>
+                    <div class="flex items-center mb-3">
+                        <div class="flex text-yellow-400">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm ml-2">3.7 (63评价)</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">专为iOS设备设计的高性能游戏注入器，提供流畅的游戏体验和强大的注入功能。</p>
+                    <div class="flex flex-col space-y-3">
+                        <a href="https://www.123865.com/s/raurjv-WA7rA" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                            <i class="fa fa-download mr-2"></i>
+                            下载文件
+                            <span class="ml-2 text-sm text-white/80">(123网盘速度起飞)</span>
+                        </a>
+                        <a href="https://appleware.dev/" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                            <i class="fa fa-external-link mr-2"></i>
+                            跳转官方页面
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 更多卡片可以继续添加 -->
+        </div>
+        
+        <!-- 加载更多按钮 -->
+        <div class="text-center mt-12">
+            <button class="px-6 py-3 bg-white border border-gray-300 rounded-lg shadow-sm text-gray-700 font-medium hover:bg-gray-50 transition-colors duration-200">
+                <i class="fa fa-refresh mr-2"></i>加载更多
+            </button>
         </div>
     </main>
-
-    <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group" style="width: 500px;justify-self: center;">
-        <div class="flex flex-col md:flex-row">
-            <div class="md:w-1/3 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center p-6">
-                <img src="codex.png" alt="忍者注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
-            </div>
-            <div class="md:w-2/3 p-6">
-                <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
-                    <i class="fa fa-bolt text-accent mr-2"></i>
-                    Codex
-                </h2>
-                <p class="text-gray-600 mb-4">专为iOS设备设计的高性能游戏注入器，提供流畅的游戏体验和强大的注入功能。</p>
-                <div class="flex flex-col space-y-3">
-                    <a href="https://www.123865.com/s/raurjv-Fh7rA" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
-                        <i class="fa fa-download mr-2"></i>
-                        下载文件
-                        <span class="ml-2 text-sm text-white/80">(123网盘速度起飞)</span>
-                    </a>
-                    <a href="https://codex.lol/ios" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
-                        <i class="fa fa-external-link mr-2"></i>
-                        跳转官方页面
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</main>
-<br>
-<br>
 
     <!-- 页脚 -->
     <footer class="bg-dark text-white py-12">
@@ -186,6 +278,7 @@
                     <h3 class="text-xl font-bold mb-4">游戏注入器中心</h3>
                     <p class="text-gray-400">提供跨平台的游戏注入器下载服务，让您的游戏体验更加丰富多样。</p>
                 </div>
+                
                 <div>
                     <h4 class="text-lg font-semibold mb-4">快速链接</h4>
                     <ul class="space-y-2">
@@ -195,6 +288,7 @@
                         <li><a href="pg4.html" class="text-gray-400 hover:text-white transition-colors duration-200">Windows专区</a></li>
                     </ul>
                 </div>
+                
                 <div>
                     <h4 class="text-lg font-semibold mb-4">支持</h4>
                     <ul class="space-y-2">
@@ -203,6 +297,7 @@
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">联系我们</a></li>
                     </ul>
                 </div>
+                
                 <div>
                     <h4 class="text-lg font-semibold mb-4">关注我们</h4>
                     <div class="flex space-x-4">
@@ -221,8 +316,9 @@
                     </div>
                 </div>
             </div>
+            
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
-                <p>&copy; 2023 游戏注入器中心. 保留所有权利.</p>
+                <p>&copy; 2025游戏注入器中心. 保留所有权利.</p>
             </div>
         </div>
     </footer>
@@ -231,26 +327,30 @@
         // 导航栏滚动效果
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 10) {
-                navbar.classList.add('py-2', 'shadow-lg');
-                navbar.classList.remove('py-3', 'shadow-md');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-3');
+                navbar.classList.add('shadow-lg');
             } else {
-                navbar.classList.add('py-3', 'shadow-md');
-                navbar.classList.remove('py-2', 'shadow-lg');
+                navbar.classList.add('py-3');
+                navbar.classList.remove('py-2');
+                navbar.classList.remove('shadow-lg');
             }
         });
-
+        
         // 移动端菜单切换
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
+        
         menuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
-        // 添加平滑滚动
+        
+        // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+                
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
