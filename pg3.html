@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>安卓专区（apk）</title>
+    <title>安卓游戏注入器中心 - 安全高效的游戏增强工具</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     
@@ -24,7 +24,7 @@
                     },
                     boxShadow: {
                         'card': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
                     }
                 },
             }
@@ -44,6 +44,13 @@
             }
             .gradient-bg {
                 background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
             }
         }
     </style>
@@ -81,7 +88,8 @@
 
     <!-- 主内容区 -->
     <main class="container mx-auto px-4 pt-24 pb-16">
-        <div class="text-center mb-12">
+        <!-- 标题区域 -->
+        <div class="text-center mb-12 mt-8 animate-fade-in">
             <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark mb-4 text-shadow">
                 安卓apk注入器下载专区
             </h1>
@@ -91,31 +99,30 @@
         </div>
 
         <!-- 分类标签 -->
-        <div class="flex flex-wrap justify-center gap-3 mb-10">
-            <button class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium">全部</button>
+        <div class="flex flex-wrap justify-center gap-3 mb-10 animate-slide-up" style="animation-delay: 0.2s">
+            <button class="px-6 py-2.5 bg-primary text-white rounded-full text-sm font-medium shadow-button hover:shadow-button-hover transition-all duration-300">全部</button>
         </div>
 
-        <!-- 卡片容器 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- 卡片容器 - 改进的排版布局 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <!-- 阿尔宙斯卡片 -->
-            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
-                <div class="flex flex-col md:flex-row">
-                    <div class="md:w-1/3 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center p-6">
-                        <img src="arceus.png" alt="阿尔宙斯注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group animate-slide-up" style="animation-delay: 0.3s">
+                <div class="flex flex-col h-full">
+                    <div class="bg-gradient-to-br from-blue-500 to-indigo-600 p-6 flex items-center justify-center h-48">
+                        <img src="arceus.png" alt="阿尔宙斯注入器" class="w-full h-32 object-contain group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="md:w-2/3 p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
                             <i class="fa fa-rocket text-primary mr-2"></i>
                             阿尔宙斯(Arceus)
                         </h2>
-                        <p class="text-gray-600 mb-4">一款功能强大的安卓游戏注入器，支持多种热门游戏，提供丰富的游戏辅助功能。</p>
-                        <div class="flex flex-col space-y-3">
-                            <a href="https://arceusx.com/arceusx" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                        <p class="text-gray-600 mb-4 flex-grow">一款功能强大的安卓游戏注入器，支持多种热门游戏，提供丰富的游戏辅助功能。</p>
+                        <div class="flex flex-col space-y-3 pt-2">
+                            <a href="https://www.123865.com/s/raurjv-6f7rA" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow">
                                 <i class="fa fa-download mr-2"></i>
                                 下载文件
-                                <span class="ml-2 text-sm text-white/80">(直连网站下载速度较慢)</span>
                             </a>
-                            <a href="https://arceusx.com" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                            <a href="https://arceusx.com" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2.5 rounded-lg transition-colors duration-200">
                                 <i class="fa fa-external-link mr-2"></i>
                                 跳转官方页面
                             </a>
@@ -125,24 +132,23 @@
             </div>
 
             <!-- 忍者卡片 -->
-            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
-                <div class="flex flex-col md:flex-row">
-                    <div class="md:w-1/3 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center p-6">
-                        <img src="delta.png" alt="忍者注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group animate-slide-up" style="animation-delay: 0.4s">
+                <div class="flex flex-col h-full">
+                    <div class="bg-gradient-to-br from-purple-500 to-pink-600 p-6 flex items-center justify-center h-48">
+                        <img src="delta.png" alt="忍者注入器" class="w-full h-32 object-contain group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="md:w-2/3 p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
                             <i class="fa fa-bolt text-accent mr-2"></i>
                             忍者(Delta)
                         </h2>
-                        <p class="text-gray-600 mb-4">专为安卓设备设计的高性能游戏注入器，提供流畅的游戏体验和强大的注入功能。</p>
-                        <div class="flex flex-col space-y-3">
-                            <a href="https://deltaexectr.com/apk" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                        <p class="text-gray-600 mb-4 flex-grow">专为安卓设备设计的高性能游戏注入器，提供流畅的游戏体验和强大的注入功能。</p>
+                        <div class="flex flex-col space-y-3 pt-2">
+                            <a href="https://www.123865.com/s/raurjv-yf7rA" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow">
                                 <i class="fa fa-download mr-2"></i>
                                 下载文件
-                                <span class="ml-2 text-sm text-white/80">(直连网站下载速度较慢)</span>
                             </a>
-                            <a href="https://deltaexectr.com/" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                            <a href="https://deltaexectr.com/" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2.5 rounded-lg transition-colors duration-200">
                                 <i class="fa fa-external-link mr-2"></i>
                                 跳转官方页面
                             </a>
@@ -152,24 +158,23 @@
             </div>
 
             <!-- Fluxus卡片 -->
-            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
-                <div class="flex flex-col md:flex-row">
-                    <div class="md:w-1/3 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center p-6">
-                        <img src="fluxus.png" alt="Fluxus注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group animate-slide-up" style="animation-delay: 0.5s">
+                <div class="flex flex-col h-full">
+                    <div class="bg-gradient-to-br from-green-500 to-teal-600 p-6 flex items-center justify-center h-48">
+                        <img src="fluxus.png" alt="Fluxus注入器" class="w-full h-32 object-contain group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="md:w-2/3 p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
                             <i class="fa fa-bolt text-secondary mr-2"></i>
                             Fluxus
                         </h2>
-                        <p class="text-gray-600 mb-4">一款轻量级且功能强大的安卓游戏注入器，支持多种游戏修改和增强功能。</p>
-                        <div class="flex flex-col space-y-3">
-                            <a href="https://www.123865.com/s/raurjv-OjlrA" class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                        <p class="text-gray-600 mb-4 flex-grow">一款轻量级且功能强大的安卓游戏注入器，支持多种游戏修改和增强功能。</p>
+                        <div class="flex flex-col space-y-3 pt-2">
+                            <a href="https://www.123865.com/s/raurjv-OjlrA" class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white px-4 py-2.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow">
                                 <i class="fa fa-download mr-2"></i>
                                 下载文件
-                                <span class="ml-2 text-sm text-white/80">(123网盘速度起飞)</span>
                             </a>
-                            <a href="https://fluxusexecutor.org/download/" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                            <a href="https://fluxusexecutor.org/download/" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2.5 rounded-lg transition-colors duration-200">
                                 <i class="fa fa-external-link mr-2"></i>
                                 跳转官方页面
                             </a>
@@ -179,19 +184,23 @@
             </div>
 
             <!-- 水滴卡片 -->
-            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
-                <div class="flex flex-col md:flex-row">
-                    <div class="md:w-1/3 bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center p-6">
-                        <img src="水滴.png" alt="水滴注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group animate-slide-up" style="animation-delay: 0.6s">
+                <div class="flex flex-col h-full">
+                    <div class="bg-gradient-to-br from-blue-400 to-cyan-500 p-6 flex items-center justify-center h-48">
+                        <img src="水滴.png" alt="水滴注入器" class="w-full h-32 object-contain group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="md:w-2/3 p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
                             <i class="fa fa-tint text-blue-500 mr-2"></i>
                             水滴
                         </h2>
-                        <p class="text-gray-600 mb-4">一款专为安卓设备设计的注入器，提供简洁易用的界面和丰富的游戏辅助功能。</p>
-                        <div class="flex flex-col space-y-3">
-                            <a href="https://hydrogen.us.com/download/" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                        <p class="text-gray-600 mb-4 flex-grow">一款专为安卓设备设计的注入器，提供简洁易用的界面和丰富的游戏辅助功能。</p>
+                        <div class="flex flex-col space-y-3 pt-2">
+                            <a href="https://www.123865.com/s/raurjv-Vf7rA" class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white px-4 py-2.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow">
+                                <i class="fa fa-download mr-2"></i>
+                                下载文件
+                            </a>
+                            <a href="https://hydrogen.us.com/download/" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2.5 rounded-lg transition-colors duration-200">
                                 <i class="fa fa-external-link mr-2"></i>
                                 跳转下载页面
                             </a>
@@ -201,24 +210,23 @@
             </div>
 
             <!-- lllusion卡片 -->
-            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
-                <div class="flex flex-col md:flex-row">
-                    <div class="md:w-1/3 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center p-6">
-                        <img src="lllusion.png" alt="lllusion注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group animate-slide-up" style="animation-delay: 0.7s">
+                <div class="flex flex-col h-full">
+                    <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 flex items-center justify-center h-48">
+                        <img src="lllusion.png" alt="lllusion注入器" class="w-full h-32 object-contain group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="md:w-2/3 p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
                             <i class="fa fa-magic text-indigo-500 mr-2"></i>
                             lllusion
                         </h2>
-                        <p class="text-gray-600 mb-4">一款功能全面的安卓游戏注入器，支持多种游戏和多种注入方式，满足不同需求。</p>
-                        <div class="flex flex-col space-y-3">
-                            <a href="https://www.123865.com/s/raurjv-ujlrA" class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                        <p class="text-gray-600 mb-4 flex-grow">一款功能全面的安卓游戏注入器，支持多种游戏和多种注入方式，满足不同需求。</p>
+                        <div class="flex flex-col space-y-3 pt-2">
+                            <a href="https://www.123865.com/s/raurjv-ujlrA" class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white px-4 py-2.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow">
                                 <i class="fa fa-download mr-2"></i>
                                 下载文件
-                                <span class="ml-2 text-sm text-white/80">(123网盘速度起飞)</span>
                             </a>
-                            <a href="https://projectillusion.dev/#download" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                            <a href="https://projectillusion.dev/#download" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2.5 rounded-lg transition-colors duration-200">
                                 <i class="fa fa-external-link mr-2"></i>
                                 跳转官方页面
                             </a>
@@ -227,64 +235,70 @@
                 </div>
             </div>
 
-            <!-- vegax卡片 -->
-            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group">
-                <div class="flex flex-col md:flex-row">
-                    <div class="md:w-1/3 bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center p-6">
-                        <img src="vegax.png" alt="vegax注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+            <!-- KRNL卡片 - 修复布局问题，与水滴专区一致 -->
+            <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group animate-slide-up" style="animation-delay: 0.8s">
+                <div class="flex flex-col h-full">
+                    <div class="bg-gradient-to-br from-amber-500 to-red-600 p-6 flex items-center justify-center h-48">
+                        <img src="krnl.png" alt="KRNL注入器" class="w-full h-32 object-contain group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <div class="md:w-2/3 p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
-                            <i class="fa fa-bomb text-red-500 mr-2"></i>
-                            vegax
+                            <i class="fa fa-fire text-amber-500 mr-2"></i>
+                            KRNL
                         </h2>
-                        <p class="text-gray-600 mb-4">一款高性能的安卓游戏注入器，专为追求极致游戏体验的玩家设计。</p>
-                        <div class="flex flex-col space-y-3">
-                            <a href="https://github.com/1f0yt/community/releases/download/Vegax/Vega.X.apk" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                        <p class="text-gray-600 mb-4 flex-grow">一款高性能的安卓游戏注入器，专为追求极致游戏体验的玩家设计，提供稳定的游戏修改功能。</p>
+                        <div class="flex flex-col space-y-3 pt-2">
+                            <a href="https://www.123865.com/s/raurjv-jf7rA" class="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-white px-4 py-2.5 rounded-lg transition-all duration-200 shadow-sm hover:shadow">
                                 <i class="fa fa-download mr-2"></i>
                                 下载文件
-                                <span class="ml-2 text-sm text-white/80">(直连下载速度较慢)</span>
                             </a>
-                            <a href="https://vegax.gg" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
+                            <a href="https://www.krnl.com/download" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2.5 rounded-lg transition-colors duration-200">
                                 <i class="fa fa-external-link mr-2"></i>
                                 跳转官方页面
                             </a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 下载须知 -->
+        <div class="mt-16 bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto animate-fade-in" style="animation-delay: 1s">
+            <h2 class="text-2xl font-bold text-dark mb-6 flex items-center">
+                <i class="fa fa-info-circle text-primary mr-3"></i>
+                下载须知
+            </h2>
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <div class="bg-primary/10 rounded-full p-2 mt-1 mr-4">
+                        <i class="fa fa-shield text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">安全提示</h3>
+                        <p class="text-gray-600">所有注入器均经过安全检测，但部分游戏可能会将其识别为违规软件，请谨慎使用。</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-primary/10 rounded-full p-2 mt-1 mr-4">
+                        <i class="fa fa-download text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">安装说明</h3>
+                        <p class="text-gray-600">下载后请允许安装未知来源应用，并按照提示完成安装。部分注入器需要Root权限。</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-primary/10 rounded-full p-2 mt-1 mr-4">
+                        <i class="fa fa-refresh text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">更新频率</h3>
+                        <p class="text-gray-600">我们会定期更新注入器版本，以确保兼容性和安全性，请保持关注。</p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
-    <div class="bg-white rounded-xl shadow-card card-transition hover:shadow-card-hover hover:-translate-y-2 overflow-hidden group" style="width: 500px;justify-self: center;">
-        <div class="flex flex-col md:flex-row">
-            <div class="md:w-1/3 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center p-6">
-                <img src="codex.png" alt="忍者注入器" class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-300">
-            </div>
-            <div class="md:w-2/3 p-6">
-                <h2 class="text-xl font-bold text-dark mb-3 flex items-center">
-                    <i class="fa fa-bolt text-accent mr-2"></i>
-                    Codex
-                </h2>
-                <p class="text-gray-600 mb-4">专为iOS设备设计的高性能游戏注入器，提供流畅的游戏体验和强大的注入功能。</p>
-                <div class="flex flex-col space-y-3">
-                    <a href="https://www.123865.com/s/raurjv-Dh7rA" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
-                        <i class="fa fa-download mr-2"></i>
-                        下载文件
-                        <span class="ml-2 text-sm text-white/80">(123网盘速度起飞)</span>
-                    </a>
-                    <a href="https://codex.lol/android" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
-                        <i class="fa fa-external-link mr-2"></i>
-                        跳转官方页面
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</main>
-<br>
-<br>
 
     <!-- 页脚 -->
     <footer class="bg-dark text-white py-12">
@@ -292,59 +306,73 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">游戏注入器中心</h3>
-                    <p class="text-gray-400">提供跨平台的游戏注入器下载服务，让您的游戏体验更加丰富多样。</p>
+                    <p class="text-gray-400">为您提供安全、高效的游戏注入工具，让游戏体验更加丰富。</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fa fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+                    <h3 class="text-lg font-semibold mb-4">快速链接</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-200">首页</a></li>
-                        <li><a href="pg2.html" class="text-gray-400 hover:text-white transition-colors duration-200">苹果专区</a></li>
-                        <li><a href="pg3.html" class="text-gray-400 hover:text-white transition-colors duration-200">安卓专区</a></li>
-                        <li><a href="pg4.html" class="text-gray-400 hover:text-white transition-colors duration-200">Windows专区</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">首页</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">安卓专区</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">苹果专区</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Windows专区</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">支持</h4>
+                    <h3 class="text-lg font-semibold mb-4">支持</h3>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">常见问题</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">安装指南</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">安装教程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">使用帮助</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">联系我们</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">关注我们</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                            <i class="fa fa-facebook-square text-2xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                            <i class="fa fa-twitter-square text-2xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                            <i class="fa fa-instagram text-2xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                            <i class="fa fa-discord text-2xl"></i>
-                        </a>
-                    </div>
+                    <h3 class="text-lg font-semibold mb-4">订阅更新</h3>
+                    <p class="text-gray-400 mb-4">订阅我们的通讯，获取最新注入器和游戏资讯</p>
+                    <form class="flex">
+                        <input type="email" placeholder="您的邮箱地址" class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-dark">
+                        <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-r-lg transition-colors duration-200">
+                            订阅
+                        </button>
+                    </form>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
-                <p>&copy; 2023 游戏注入器中心. 保留所有权利.</p>
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 游戏注入器中心. 保留所有权利.</p>
             </div>
         </div>
     </footer>
 
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white rounded-full p-3 shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90 focus:outline-none">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
     <script>
         // 导航栏滚动效果
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 10) {
-                navbar.classList.add('py-2', 'shadow-lg');
-                navbar.classList.remove('py-3', 'shadow-md');
+                navbar.classList.add('py-2', 'shadow-md');
+                navbar.classList.remove('py-3');
             } else {
-                navbar.classList.add('py-3', 'shadow-md');
-                navbar.classList.remove('py-2', 'shadow-lg');
+                navbar.classList.add('py-3');
+                navbar.classList.remove('py-2', 'shadow-md');
             }
         });
 
@@ -355,15 +383,56 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // 添加平滑滚动
+        // 返回顶部按钮
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // 如果是移动菜单，点击后关闭
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // 卡片动画效果
+        const cards = document.querySelectorAll('.card-transition');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('shadow-card-hover', '-translate-y-2');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('shadow-card-hover', '-translate-y-2');
             });
         });
     </script>
 </body>
-</html>
+</html>    
