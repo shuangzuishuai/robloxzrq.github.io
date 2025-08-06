@@ -1,0 +1,3 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/tysonware/TysonScripts/main/Blade%20Ball%201'))()
+
+--钥匙是75nw4w435q52

